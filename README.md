@@ -1,73 +1,63 @@
-# React + TypeScript + Vite
+# Book Search Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 프로젝트 소개
+도서 검색 API를 활용한 웹 기반 도서 검색 서비스입니다.  
+사용자는 제목, 저자, 키워드를 기반으로 원하는 도서를 검색하고 상세 정보를 확인할 수 있습니다.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 주요 기능
+- 도서 검색 기능
+- 도서 상세 정보 조회
+- 반응형 웹 UI 지원
+- API 기반 실시간 데이터 조회
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 기술 스택
+### Frontend
+- React
+- JavaScript
+- HTML/CSS
 
-## Expanding the ESLint configuration
+### DevOps
+- GitHub Actions
+- AWS Amplify
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### API
+- REST API
+- 도서 검색 API
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Github Actions
+GitHub Actions를 활용하여 CI/CD 환경을 구성했습니다.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 자동화 기능
+- Push 시 자동 빌드
+- 자동 배포
+- AWS Amplify 연동
+
+---
+
+## AWS 배포 URL
+https://master.d36kb0wgrnqit8.amplifyapp.com
+
+※ AWS Amplify 세션은 약 4시간 동안 유효합니다.
+
+---
+
+## 실행 방법
+
+```bash
+npm install
+npm start
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Build
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
